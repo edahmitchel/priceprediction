@@ -19,6 +19,10 @@
 			Price for Quantity : <input id='price' type='number' required min='1'>
 		</label>
 		<button>Add Data</button>
+
+		<div>
+
+		</div>
 	</form>
 	
 	
@@ -86,13 +90,40 @@
 				predictPrice(xs, ys)
 			}
 		}
-		
+		let pPRICE = Document.querySelector("#price").value
+
 		function predictPrice(xs, ys){
-			// Given an array of learning, makes prediction of price
-			for(let 1=0;i<xs.length; let)
+			let count = 0
+			let Exs = 0
+			let Eys = 0
+			let ExsSQUARE = 0
 			
-			// write code here
-		}
+			// Given an array of learning, makes prediction of price
+			for(i=0;i<xs.length;i++){
+				let varONE =+ Number(xs*ys)
+				count=+1
+				 Exs =+xs
+				 Eys =+ys
+				 ExsSQUARE =+ xs^2
+
+
+
+			}
+			let ExsExy = Exs*Eys
+			let mainVarOne = count*varONE
+			let sNum = mainVarOne -ExsExy
+			let nExsSQUARE = count*ExsSQUARE
+			let xsSumSquare = Exs^2
+
+			let sDen =nExsSQUARE-xsSumSquare
+			let slope = sNum/sDen
+			
+			let intercept = (Eys-(slope*Exs))/count
+			let pP =intercept+(pPRICE*slope)
+			let pDiv = document.querySelector("div")
+			pDiv.innerHTML= `predicted price is ${pP}`}
+
+
 	</script>
 </body>
 
