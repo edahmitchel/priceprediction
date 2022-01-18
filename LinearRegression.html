@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+	<h2>Welcome to Price Prediction. We help give you informed decision on the best prices to sell your products</h2>
+	<form id='trainingData'>
+		<h3>Add data to train our prediction model</h3>
+		<label for='productqty'>
+			Product Quantity : <input id='productqty' type='number' required min='1'>
+		</label>
+		
+		<label for='price'>
+			Price for Quantity : <input id='price' type='number' required min='1'>
+		</label>
+		<button>Add Data</button>
+	</form>
+	
+	
+	<br>
+	<form id='predictPriceForm'>
+		<h3>Predict best price for quantity</h3>
+		<label for='predict'>
+			Quantity to Predict : <input type='number' id='predict' required min='1'>
+		</label>
+		
+		<button>Predict Price</button>
+	</form>
+	
+	<script>
+	const trainingDataForm = document.querySelector('#trainingData')
+	trainingDataForm.onsubmit = addLearningData
+	
+		function  addLearningData(e){
+			e.preventDefault()
+			// if xs data not in session storage, create xs data
+			if(!sessionStorage.getItem('xs')){
+				sessionStorage.setItem('xs', JSON.stringify([]))
+			}
+			// if ys data not in session storage, create ys 
+			if(!sessionStorage.getItem('ys')){
+				sessionStorage.setItem('ys', JSON.stringify([]))
+			}
+			
+			// get data from inputs
+			let x = Number(document.querySelector('#productqty').value)
+			let y = Number(document.querySelector('#price').value)
+			
+			// add x and y data to corresponding arrays
+			const xs = JSON.parse(sessionStorage.getItem('xs'))
+			const ys = JSON.parse(sessionStorage.getItem('ys'))
+			xs.push(x)
+			ys.push(y)
+			
+			// visualize data
+			console.log(xs, ys)
+			// update session storage
+			
+			sessionStorage.setItem('xs', JSON.stringify(xs))
+			sessionStorage.setItem('ys', JSON.stringify(ys))
+			alert('data saved successfully')
+			
+		}
+		
+		// predictPrice
+		let predictPriceForm = document.querySelector('#predictPriceForm')
+		predictPriceForm.onsubmit = makePrediction
+		
+		// make prediction 
+		function makePrediction(e){
+			e.preventDefault()
+			// make sure fhere is enough learning data to predict price
+			let xs = JSON.parse(sessionStorage.getItem('xs')) || []
+			let ys = JSON.parse(sessionStorage.getItem('ys')) || []
+			if(xs.length < 2 && ys.length < 2){
+				alert('not enough learning data')
+				return
+			}
+			// if there is enough learning data, predict price
+			else{
+				predictPrice(xs, ys)
+			}
+		}
+		
+		function predictPrice(xs, ys){
+			// Given an array of learning, makes prediction of price
+			for(let 1=0;i<xs.length; let)
+			
+			// write code here
+		}
+	</script>
+</body>
+
+</html>
