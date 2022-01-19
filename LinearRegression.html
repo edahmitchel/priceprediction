@@ -20,9 +20,13 @@
 		</label>
 		<button>Add Data</button>
 
-		<div>
+		<div id="answer">
 
 		</div>
+		<br>
+    <button id='viewStoredData'>View Stored Data</button>
+
+    <div id='viewData'></div>
 	</form>
 	
 	
@@ -112,21 +116,79 @@
 
 
 			}
+			console.log(varONE)
+			console.log(Exs)
+			console.log(Eys)
+			console.log(ExsSQUARE)
+
 			let ExsExy = Exs*Eys
+			console.log(ExsExy)
 			let mainVarOne = count*varONE
+			console.log(mainVarOne)
 			let sNum = mainVarOne -ExsExy
+			console.log(sNum)
 			let nExsSQUARE = count*ExsSQUARE
+			console.log(nExsSQUARE)
 			let xsSumSquare = Exs**2
 
 			let sDen =nExsSQUARE-xsSumSquare
 			let slope = sNum/sDen
+			console.log(sNum)
+			console.log(sDen)
+			console.log(slope)
 			
 			let intercept = (Eys-(slope*Exs))/count
 			console.log(intercept)
 			let pP =intercept+(pPRICE*slope)
 			console.log(pPRICE)
-			let pDiv = document.querySelector("div")
+			let pDiv = document.querySelector("#answer")
 			pDiv.innerHTML= `predicted price is ${pP}`}
+
+
+			const viewStoredData = document.querySelector("#viewStoredData")
+        viewStoredData.onclick = e => {
+            // Try accessing data from session Storage
+            let xs = JSON.parse(sessionStorage.getItem("xs")) || []
+            let ys = JSON.parse(sessionStorage.getItem("ys")) || []
+
+            // if no data found
+            if(xs.length < 1){
+                let msg = "No training data recorded"
+                let viewData = document.querySelector("#viewData")
+                viewData.innerHTML = msg
+                return
+            }
+
+            // if data is found
+
+            let table = document.createElement("table")
+            table.innerHTML = `<thead>
+                <tr>
+                    <th>Product Quantity</th>
+                    <th>Price for Quantity</th>
+                </tr>
+                    
+                </thead>`
+            
+                // loop through xs and ys and populate table with data
+                for(let idx=0; idx < xs.length; idx+=1){
+                    let x = xs[idx]
+                    let y = ys[idx]
+                    let tr = document.createElement("tr")
+                    tr.innerHTML = `
+                        <td>${x}</td>
+                        <td>${y}</td>
+                    `
+                    table.append(tr)
+                }
+
+                // add table to DOM
+                let viewData = document.querySelector("#viewData")
+                viewData.innerHTML = ""
+                viewData.append(table)
+
+
+        }
 			
 
 
