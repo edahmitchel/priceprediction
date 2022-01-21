@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-</head>
-
-<body>
-	<h2>Welcome to Price Prediction. We help give you informed decision on the best prices to sell your products</h2>
-	<form id='trainingData'>
-		<h3>Add data to train our prediction model</h3>
-		<label for='productqty'>
-			Product Quantity : <input id='productqty' type='number' required min='1'>
-		</label>
-		
-		<label for='price'>
-			Price for Quantity : <input id='price' type='number' required min='1'>
-		</label>
-		<button>Add Data</button>
-
-		<div id="answer">
-
-		</div>
-		<br>
-    <button id='viewStoredData'>View Stored Data</button>
-
-    <div id='viewData'></div>
-	</form>
-	
-	
-	<br>
-	<form id='predictPriceForm'>
-		<h3>Predict best price for quantity</h3>
-		<label for='predict'>
-			Quantity to Predict : <input type='number' id='predict' required min='1'>
-		</label>
-		
-		<button>Predict Price</button>
-	</form>
-	
-	<script>
 	const trainingDataForm = document.querySelector('#trainingData')
 	trainingDataForm.onsubmit = addLearningData
 	
@@ -192,7 +150,4 @@
 			
 
 
-	</script>
-</body>
-
-</html>
+	

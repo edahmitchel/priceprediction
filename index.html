@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>linear regression</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body>
+	<main>
+	<header>
+		<h2>Welcome to Price Prediction. We help give you informed decision on the best prices to sell your products</h2>
+	</header>
+	<div class="maincontainer">
+		<section>
+			<form id='trainingData'>
+				<div>
+					<h3>Add data to train our prediction model</h3>
+				<label for='productqty'>
+					Product Quantity : <input id='productqty' type='number' required min='1'>
+				</label>
+				</div>
+				
+				<div>
+					<label for='price'>
+						Price for Quantity : <input id='price' type='number' required min='1'>
+					</label>
+					<button>Add Data</button>
+				</div>
+		
+			
+				<br>
+			<button id='viewStoredData'>View Stored Data</button>
+		
+			<div id='viewData'></div>
+			</form>
+		</section>
+		
+		
+		<section>
+			<form id='predictPriceForm'>
+				<h3>Predict best price for quantity</h3>
+				<label for='predict'>
+					Quantity to Predict : <input type='number' id='predict' required min='1'>
+				</label>
+				
+				<button>Predict Price</button>
+				<div id="answer">
+		
+				</div>
+			</form>
+	
+		</section>
+	
+	</div>
+	</main>
+	
+	
+</body>
+<script src="./linreg.js"></script>
+</html>

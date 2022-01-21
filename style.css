@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 100vh;
+}
+main {
+    border: red solid;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    /* align-items: center */
+    margin: auto;
+}
+.maincontainer{
+    display: flex;
+    justify-content: space-between;
+}
+section{
+    border: solid brown;
+    margin: 30px;
+    flex: 1;
+    padding: 30px;
+
+}
+header{
+    margin: 30px;
+    
+}
