@@ -1,4 +1,5 @@
-
+// let bBtn = document.querySelectorAll("button")
+// bBtn.classList.add("btn btn-primary")
 	const trainingDataForm = document.querySelector('#trainingData')
 	trainingDataForm.onsubmit = addLearningData
 	
@@ -147,6 +148,7 @@
 
 
         }
+		
 			
 
 
