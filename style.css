@@ -63,7 +63,7 @@ padding: 1px;}
 input{
 margin: 3px 2px 0px 0px;}
 button:hover{opacity: 1;}
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
     .maincontainer{
         display:flex;
         flex-direction:column;
