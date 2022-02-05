@@ -45,19 +45,29 @@ h3{
 }
 button{
 background-color: #1c3b3b;
-color:white;
+color:yellow;
 border-radius: 8px;
 padding: 3px 5px;
 border: none;
 font-size: 16px;
 opacity: 0.75;
 transition: 0.3s;
+font-size: 14px;
 
 }
 
-label{color: rgb(240, 225, 26);
-font-weight: 900;
-padding: 2px;}
+label{color: yellow;
+    opacity: 1;
+/* font-weight: 900; */
+padding: 1px;}
 input{
-margin: 5px 2px;}
+margin: 3px 2px 0px 0px;}
 button:hover{opacity: 1;}
+@media only screen and (max-width: 500px) {
+    .maincontainer{
+        display:flex;
+        flex-direction:column;
+    }
+h2{line-height: 20px;
+}
+}
